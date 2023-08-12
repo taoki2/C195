@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c195.Controller.ReportController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="1000.0">
+         <children>
+            <HBox>
+               <children>
+                  <Label text="Reports">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label text="Appointment Schedule">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets top="25.0" />
+               </padding></Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="970.0" spacing="25.0">
+               <children>
+                  <Label text="Contact:" />
+                  <ComboBox fx:id="contactCombo" onAction="#onActionContactCombo" prefWidth="150.0" promptText="select a contact..." />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+            <TableView fx:id="apptTable" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="apptIdCol" prefWidth="41.0" text="ID" />
+                <TableColumn fx:id="apptTitleCol" prefWidth="58.0" text="Title" />
+                  <TableColumn fx:id="apptTypeCol" prefWidth="101.0" text="Type" />
+                  <TableColumn fx:id="apptDescCol" prefWidth="157.0" text="Description" />
+                  <TableColumn fx:id="apptLocationCol" prefWidth="159.0" text="Location" />
+                  <TableColumn fx:id="apptStartCol" prefWidth="174.0" text="Start Date/Time" />
+                  <TableColumn fx:id="apptEndCol" prefWidth="175.0" text="End Date/Time" />
+                  <TableColumn fx:id="apptCustCol" prefWidth="100.0" text="Customer" />
+              </columns>
+            </TableView>
+            <GridPane>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="560.0" minWidth="10.0" prefWidth="485.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="494.0" minWidth="10.0" prefWidth="485.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label text="Total Number of Appointments per Month and Type">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="15.0" top="15.0" />
+                           </padding>
+                        </Label>
+                        <TableView fx:id="countApptTable" prefHeight="200.0" prefWidth="104.0">
+                           <columns>
+                              <TableColumn fx:id="monthCol" prefWidth="131.0" text="Month" />
+                              <TableColumn fx:id="typeCol" prefWidth="201.0" text="Type" />
+                              <TableColumn fx:id="countCol" prefWidth="119.0" text="Count" />
+                           </columns>
+                        </TableView>
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="Total Number of Customers per State/Providence">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="15.0" top="15.0" />
+                           </padding>
+                        </Label>
+                        <TableView fx:id="countCustTable" prefHeight="200.0" prefWidth="104.0">
+                           <columns>
+                              <TableColumn fx:id="divCol" prefWidth="293.0" text="State/Providence" />
+                              <TableColumn fx:id="custCountCol" minWidth="1.0" prefWidth="156.0" text="Count" />
+                           </columns>
+                        </TableView>
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets top="25.0" />
+               </padding>
+            </GridPane>
+            <HBox alignment="BOTTOM_RIGHT" layoutX="25.0" layoutY="606.0" prefHeight="86.0" prefWidth="970.0" spacing="35.0">
+               <children>
+                  <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#onActionMain" prefWidth="95.0" text="Exit" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
